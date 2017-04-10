@@ -4,7 +4,7 @@ email: hola@datos.gob.mx
 description: >
   En datos.gob.mx puedes descargar y utilizar libremente datos abiertos
   que el Gobierno de la República genera y recolecta.
-baseurl: "/dgm-guia/guia"
+baseurl: "/dgm-guia"
 url: "http://mendozagioo.github.io"
 twitter_username: jekyllrb
 twitter_text: "Descarga y utiliza libremente datos abiertos que el Gobierno de la República genera y recolecta. @GobRep @DatosGobMx"
