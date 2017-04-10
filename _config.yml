@@ -1,10 +1,14 @@
 # Site settings
 title: Guía de Datos Abiertos para México
 email: hola@datos.gob.mx
+description: >
+  En datos.gob.mx puedes descargar y utilizar libremente datos abiertos
+  que el Gobierno de la República genera y recolecta.
 baseurl: "/guia"
-url: "http://mendozagioo.github.io"
+url: "http://mendozagioo.github.io/dgm-guia"
 twitter_username: jekyllrb
-github_username:  mxabierto
+twitter_text: "Descarga y utiliza libremente datos abiertos que el Gobierno de la República genera y recolecta. @GobRep @DatosGobMx"
+github_username:  mendozagioo
 
 # Build settings
 markdown: kramdown
