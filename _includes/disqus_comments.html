@@ -1,0 +1,20 @@
+<section class="post-section comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname    = 'datosgobmx';
+        var disqus_config       = function () {
+            this.language           = "es_MX";
+            this.page.url           = '{{ site.url }}';
+            this.page.identifier    = '{{ page.url }}';
+            this.page.title         = '{{ page.title }}';
+            this.callbacks.onReady.push(function() {
+                addAriaHiddenAttrs( $('#disqus_thread iframe') );
+            });
+        };
+        (function() {
+            var dsq     = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src     = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+</section>

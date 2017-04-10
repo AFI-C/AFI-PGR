@@ -1,0 +1,27 @@
+---
+layout: guide
+title: Introducción
+permalink: /guia/introduccion/
+weight: 1
+showInSidebar: true
+
+menu_item: item-intro
+icon: icon_intro.png
+hover_desc: Esta Guía de implementación está dirigida a los funcionarios responsables de coordinar la implementación de la Política de Datos Abiertos, instaurada mediate el Decreto que Establece le Regulación en Materia de Datos Abiertos.
+home_link: Introducción
+
+section: guide
+active: all
+intro_category: true
+---
+
+{% assign posts = site.posts | where: 'category', 'intro' | where: 'published', true %}
+{% for post in posts %}
+    <h3>{{ post.title }}</h3>
+    <div class="intro section-content">
+        {{ post.content }}
+    </div>
+    <div class="section-links">
+        <a href="{{ "/guia/planea" | prepend: site.baseurl }}" class="btn highlight">Siguiente</a>
+    </div>
+{% endfor %}

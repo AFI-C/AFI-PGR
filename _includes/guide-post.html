@@ -1,0 +1,17 @@
+<h3>Paso {{ page.step }}: {{ page.section_title }}</h3>
+{% assign posts = site.posts | where: 'section', include.section | where: 'published', true | sort: 'order' %}
+<ul class="section-navigation cols-{{ posts.size }}">
+    {% for post in posts %}
+        <li class="{% if post.url == page.url %} active{% endif %}">
+            <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}"><span class="upper">Paso {{ post.step_order }}</span><span class="highlight">{{ post.title }}</span></a>
+        </li>
+    {% endfor %}
+</ul>
+<div class="section-content">
+    <h2>{{ page.title }}</h2>
+    {{ content }}
+</div>
+<div class="section-links">
+    <a href="{{ page.prev_link | prepend: site.baseurl }}" class="btn">Anterior</a>
+    <a href="{{ page.next_link | prepend: site.baseurl }}" class="btn highlight">Siguiente</a>
+</div>

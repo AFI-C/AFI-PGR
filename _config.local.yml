@@ -1,0 +1,11 @@
+# Site settings
+title: Guía de Datos Abiertos para México
+email: hola@datos.gob.mx
+baseurl: ""
+url: "http://localhost:4000/"
+twitter_username: jekyllrb
+github_username:  mxabierto
+
+# Build settings
+markdown: kramdown
+gems: ['jekyll-redirect-from']

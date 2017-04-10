@@ -1,0 +1,11 @@
+{
+    "name"          : "DGM",
+    "description"   : "DGM jekyll static blog",
+    "dependencies"  : {
+        "bootstrap"     : "^3.3.5",
+        "dgm-footer"    : "mxabierto/dgm-footer#^0.0.8",
+        "dgm-navbar"    : "mxabierto/dgm-navbar#^0.0.8",
+        "js-cookie"     : "latest",
+        "moment"        : "2.11.2"
+    }
+}

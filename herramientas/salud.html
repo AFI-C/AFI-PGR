@@ -1,0 +1,21 @@
+---
+layout: default
+title: Salud
+permalink: /herramientas/salud/
+---
+
+{% include apps_header.html highlight='all' %}
+<div class="bg-container">
+    <div class="bg hidden-sm hidden-xs"></div>
+    <div class="container-fluid">
+        <div class="row equal-height">
+            <div id="dgm-sidebar" class="col-lg-2 col-md-2 hidden-sm hidden-xs">
+                {% include sidebar.html highlight='health' section='herramientas' %}
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 posts-container">
+                {% assign posts = site.posts | where: 'section', 'herramientas' | where: 'category', 'salud' | where: 'published', true | sort: 'date' %}
+                {% include tools_container.html posts=posts section='herramientas' %}
+            </div>
+        </div>
+    </div>
+</div>

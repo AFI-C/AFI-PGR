@@ -1,0 +1,21 @@
+---
+layout: default
+title: Móvil
+permalink: /herramientas/movil/
+---
+
+{% include apps_header.html highlight='mobile' %}
+<div class="bg-container">
+    <div class="bg hidden-sm hidden-xs"></div>
+    <div class="container-fluid">
+        <div class="row equal-height">
+            <div id="dgm-sidebar" class="col-lg-2 col-md-2 hidden-sm hidden-xs">
+                {% include sidebar.html highlight='all' section='herramientas' %}
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 posts-container">
+                {% assign posts = site.posts | where: 'sub_section', 'apps' | where: 'published', true | sort: 'date' %}
+                {% include tools_container.html posts=posts section='herramientas' %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<h4>Filtros</h4>
+<h3>Sector</h3>
+<ul>
+    <li class="{% if include.highlight == 'all' %}active{% endif %} icon-item filter-all"><a href="{{ "" | append: include.section | append: '/' | prepend: site.baseurl | prepend: site.url }}">Todos</a></li>
+    <li class="{% if include.highlight == 'health' %}active{% endif %} icon-item filter-health"><a href="{{ "" | append: include.section | append: '/salud' | prepend: site.baseurl | prepend: site.url }}">Salud</a></li>
+    <li class="{% if include.highlight == 'geospatial' %}active{% endif %} icon-item filter-geospatial"><a href="{{ "" | append: include.section | append: '/geoespacial' | prepend: site.baseurl | prepend: site.url }}">Geoespacial</a></li>
+    <li class="{% if include.highlight == 'security' %}active{% endif %} icon-item filter-security"><a href="{{ "" | append: include.section | append: '/seguridad-y-justicia' | prepend: site.baseurl | prepend: site.url }}">Seguridad y justicia</a></li>
+    <li class="{% if include.highlight == 'energy' %}active{% endif %} icon-item filter-energy"><a href="{{ "" | append: include.section | append: '/energia-y-medio-ambiente' | prepend: site.baseurl | prepend: site.url }}">Energía y medio ambiente</a></li>
+    <li class="{% if include.highlight == 'education' %}active{% endif %} icon-item filter-education"><a href="{{ "" | append: include.section | append: '/educacion' | prepend: site.baseurl | prepend: site.url }}">Educación</a></li>
+    <li class="{% if include.highlight == 'economy' %}active{% endif %} icon-item filter-economy"><a href="{{ "" | append: include.section | append: '/economia' | prepend: site.baseurl | prepend: site.url }}">Economía</a></li>
+    <li class="{% if include.highlight == 'culture' %}active{% endif %} icon-item filter-culture"><a href="{{ "" | append: include.section | append: '/cultura-y-turismo' | prepend: site.baseurl | prepend: site.url }}">Cultura y turismo</a></li>
+    <li class="{% if include.highlight == 'finance' %}active{% endif %} icon-item filter-finance"><a href="{{ "" | append: include.section | append: '/finanzas-y-contrataciones' | prepend: site.baseurl | prepend: site.url }}">Finanzas y contrataciones</a></li>
+    <li class="{% if include.highlight == 'infrastructure' %}active{% endif %} icon-item filter-infrastructure"><a href="{{ "" | append: include.section | append: '/infraestructura' | prepend: site.baseurl | prepend: site.url }}">Infraestructura</a></li>
+    <li class="{% if include.highlight == 'development' %}active{% endif %} icon-item filter-development"><a href="{{ "" | append: include.section | append: '/desarrollo-sostenible' | prepend: site.baseurl | prepend: site.url }}">Desarrollo sostenible</a></li>
+    <li class="{% if include.highlight == 'government' %}active{% endif %} icon-item filter-government"><a href="{{ "" | append: include.section | append: '/gobiernos-locales' | prepend: site.baseurl | prepend: site.url }}">Gobiernos locales</a></li>
+    <li class="{% if include.highlight == 'others' %}active{% endif %} icon-item filter-others"><a href="{{ "" | append: include.section | append: '/otros' | prepend: site.baseurl | prepend: site.url }}">Otros</a></li>
+</ul>

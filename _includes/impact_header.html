@@ -1,0 +1,31 @@
+<header class="container-fluid">
+    <div class="row">
+        <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+            {% include breadcrumb.html %}
+        </div>
+        <div class="col-lg-5 col-md-6 hidden-sm hidden-xs">
+            <ul class="nav nav-tabs pull-right">
+                <li role="presentation" class="{% if include.highlight == 'all' %}active{% endif %}"><a href="/impacto">Todos</a></li>
+                <li role="presentation" class="{% if include.highlight == 'cases' %}active{% endif %}"><a href="/impacto/casos-de-uso">Casos de uso</a></li>
+                <li role="presentation" class="{% if include.highlight == 'news' %}active{% endif %}"><a href="/impacto/noticias">Noticias</a></li>
+                <li role="presentation" class="{% if include.highlight == 'advances' %}active{% endif %}"><a href="/impacto/avances">Avances</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<section id="section-title">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <h1>Impacto</h1>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                {% assign avances = site.posts | where: 'sub_section', 'avances' | where: 'published', true %}
+                {% assign cases = site.posts | where: 'sub_section', 'casos-de-uso' | where: 'published', true %}
+                {% assign news = site.posts | where: 'sub_section', 'noticias' | where: 'published', true %}
+                <p>Descubre cómo los datos abiertos generan valor con historias de uso, noticias y eventos.</p>
+                <p><a href="/impacto/casos-de-uso">{{ cases.size }} Casos de uso</a> | <a href="/impacto/noticias">{{ news.size }} Noticias</a> | <a href="/impacto/avances">{{ avances.size }} Avances</a></p>
+            </div>
+        </div>
+    </div>
+</section>

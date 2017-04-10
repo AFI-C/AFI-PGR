@@ -1,0 +1,15 @@
+---
+layout: null
+---
+{
+  "herramientas": {
+    "web": "{{ site.posts | where: 'sub_section', 'herramientas' | where: 'published', true | size }}",
+    "movil": "{{ site.posts | where: 'sub_section', 'apps' | where: 'published', true | size }}",
+    "otros": "{{ site.posts | where: 'sub_section', 'gov_apps' | where: 'published', true | size }}"
+  },
+  "impacto": {
+    "casos-de-uso": "{{ site.posts | where: 'sub_section', 'casos-de-uso' | where: 'published', true | size }}",
+    "noticias": "{{ site.posts | where: 'sub_section', 'noticias' | where: 'published', true | size }}",
+    "avances": "{{ site.posts | where: 'sub_section', 'avances' | where: 'published', true | size }}"
+  }
+}

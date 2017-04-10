@@ -1,0 +1,41 @@
+---
+layout: guide
+title: Manuales y Plantillas
+permalink: /guia/manuales-plantillas/
+weight: 6
+showInSidebar: true
+
+menu_item: item-templates
+icon: icon_templates.png
+hover_desc: En esta sección encontrarás manuales y plantillas que te ayudarán a cumplir con los requerimientos de la Guía.
+home_link: Manuales y Plantillas
+
+section: guide
+active: all
+templates_category: true
+---
+
+<div class="row">
+    {% assign posts = site.posts | where: 'section', 'templates' | where: 'published', true | sort: 'order' %}
+    {% for post in posts %}
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 resource-item">
+            <div class="item">
+                <p>{{ post.title }}</p>
+                {% assign content = post.content | strip_newlines %}
+                {% if content != "" %}
+                    <div class="item-hover">
+                        {% if post.hover_link %}
+                            <p><a href="{{ post.hover_link | prepend: site.baseurl }}">{{ content }}</a></p>
+                        {% else %}
+                            <p><a href="{{ post.document | prepend: site.baseurl }}">{{ content }}</a></p>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+            {% if post.hide_link %}
+            {% else %}
+                <a href="{{ post.document | prepend: site.baseurl }}" class="btn btn-download">{% if post.download_link %}{{ post.download_link }}{% else %}Descargar Plantilla{% endif %}</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

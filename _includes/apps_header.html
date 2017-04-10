@@ -1,0 +1,31 @@
+<header class="container-fluid">
+    <div class="row">
+        <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+            {% include breadcrumb.html %}
+        </div>
+        <div class="col-lg-5 col-md-6 hidden-sm hidden-xs">
+            <ul class="nav nav-tabs pull-right">
+                <li role="presentation" class="{% if include.highlight == 'all' %}active{% endif %}"><a href="/herramientas">Todos</a></li>
+                <li role="presentation" class="{% if include.highlight == 'web' %}active{% endif %}"><a href="/herramientas/web">Web</a></li>
+                <li role="presentation" class="{% if include.highlight == 'mobile' %}active{% endif %}"><a href="/herramientas/movil">Móvil</a></li>
+                <li role="presentation" class="{% if include.highlight == 'others' %}active{% endif %}"><a href="/herramientas/otros">Otros</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<section id="section-title">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <h1>Herramientas</h1>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-6 col-xs-12">
+                {% assign herramientas = site.posts | where: 'sub_section', 'herramientas' | where: 'published', true %}
+                {% assign apps = site.posts | where: 'sub_section', 'apps' | where: 'published', true %}
+                {% assign gov_apps = site.posts | where: 'sub_section', 'gov_apps' | where: 'published', true %}
+                <p>Interactúa con aplicaciones y visualizaciones para generar nuevo conocimiento.</p>
+                <p><a href="/herramientas/web">{{ herramientas.size }} Web</a> | <a href="/herramientas/movil">{{ apps.size }} Móviles</a> | <a href="/herramientas/otros">{{ gov_apps.size }} Otros</a></p>
+            </div>
+        </div>
+    </div>
+</section>

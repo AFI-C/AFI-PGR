@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
+            <div id="redirect-message" style=" display: none; ">
+                <h1>Redireccionando...</h1>
+                <p>Te estamos redireccionando a la pagina que solicitaste.</p>
+            </div>
+            <div id="error-content" style=" display: none; ">
+                <h1>{{ page.title }}</h1>
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</div>

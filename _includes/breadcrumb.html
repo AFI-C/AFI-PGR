@@ -1,0 +1,16 @@
+<div class="breadcrumb">
+    <a href="{{ site.url | append : site.baseurl }}" class="home-item"></a>
+    {% capture full_url %}{{ page.url | remove: '/index.html' | replace: '/', ' ' }}{% endcapture %}
+    {% capture section %}{{ full_url | truncatewords: 1 | remove: '...' }}{% endcapture %}
+    {% if section %}
+        <a href="{{ section | prepend : "/" | prepend : site.baseurl }}">/ <span>{{ section | replace: '-', ' ' }}</span></a>
+    {% endif %}
+    {% capture full_url %}{{ full_url | replace: section, ' ' }}{% endcapture %}
+    {% assign words = full_url | number_of_words %}
+    {% if words != 0 %}
+        {% capture post %}{{ full_url | truncatewords: 1 | remove: '...' }}{% endcapture %}
+        {% if post != ' ' %}
+            <a href="{{ post | prepend : '/' | prepend : section | prepend : '/' | prepend : site.baseurl }}">/ {{ page.title }}</a>
+        {% endif %}
+    {% endif %}
+</div>

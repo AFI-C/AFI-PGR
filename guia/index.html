@@ -1,0 +1,32 @@
+---
+layout: guide
+title: Guía de Datos Abiertos para México
+permalink: /guia/
+
+active: all
+guia_category: true
+---
+
+<div class="container-fluid">
+    <div class="row">
+        {% assign sorted_pages = site.pages | where:'section','guide' | where:'showInSidebar',true | sort: 'weight' %}
+        {% for section in sorted_pages %}
+            {% assign loopindex = forloop.index %}
+            {% if section.title %}
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 navigation-item">
+                    <div class="item-img">
+                        <img src="{{ "/assets/img/guide/" | append: section.icon | prepend: site.baseurl }}" />
+                        <div class="item-hover">
+                            {% if forloop.index == 1 %}
+                                <p><a href="{{ section.url | prepend: site.baseurl }}">{{ section.hover_desc }}</a></p>
+                            {% else %}
+                                <p class="link-center first"><a href="{{ section.url | prepend: site.baseurl }}">{{ section.hover_desc }}</a></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <p><a href="{{ section.url | prepend: site.baseurl }}">{{ section.home_link }}</a></p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

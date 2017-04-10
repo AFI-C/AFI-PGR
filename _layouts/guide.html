@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<header class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            {% include breadcrumb.html %}
+        </div>
+    </div>
+</header>
+<section id="section-title">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <h1>Guía</h1>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-6 col-xs-12">
+                <p>4 pasos básicos para cumplir con el Decreto de Datos Abiertos.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="guide bg-container">
+    <div class="bg hidden-sm hidden-xs"></div>
+    <div class="container-fluid">
+        <div class="row equal-height">
+            <div id="dgm-sidebar" class="col-lg-2 col-md-2 hidden-sm hidden-xs">
+                <aside class="guide-navigation">
+                    <ul>
+                        {% assign sorted_pages = site.pages | where:'section','guide' | where:'showInSidebar',true | sort: 'weight' %}
+                        {% for section in sorted_pages %}
+                            {% if section.title %}
+                                <li class="{{ section.menu_item }} {% if page.url contains section.url %} active{% endif %}">
+                                    <a href="{{ section.url | prepend: site.baseurl }}" aria-label="{{ section.aria_label }}">{{ section.home_link }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </aside>
+            </div>
+            <div id="guide-content" class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</div>

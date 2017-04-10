@@ -1,0 +1,55 @@
+<div class="post-item {{ include.class }}">
+    <div class="post-overlay" data-link="{{ include.post.permalink }}">
+        <div class="inner">
+            <div class="row">
+                {% if include.class == 'first' %}
+                    <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 icon-container">
+                {% else %}
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 icon-container">
+                {% endif %}
+                    <span class="category-icon icon-{{ include.post.category }}"></span>
+                </div>
+                {% if include.class == 'first' %}
+                    <div class="col-lg-11 col-md-11 col-sm-9 col-xs-9 icon-container">
+                {% else %}
+                    <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9 icon-container">
+                {% endif %}
+                    <h5><a href="{{ include.post.permalink }}">{{ include.post.title }}</a></h5>
+                    <p><i>{{ include.post.author }}</i></p>
+                    <p class="small">{% include es_date.html date=include.post.date %}</p>
+                    {% if include.class == 'first' %}
+                        <p>{{ include.post.content | strip_html | truncatewords: 50 }}</p>
+                    {% else %}
+                        <p>{{ include.post.content | strip_html | truncatewords: 15 }}</p>
+                    {% endif %}
+                    <h6>{{ include.post.category_title }}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if include.class == 'first' %}
+        <a class="text-center" href="{{ include.post.permalink }}"><img src="{{ "/assets/img/" | append: include.section | append: '/' | append: include.post.featured_img | prepend: site.baseurl | prepend: site.url }}"></a>
+    {% else %}
+        <a class="text-center" href="{{ include.post.permalink }}"><img src="{{ "/assets/img/" | append: include.section | append: '/' | append: include.post.grid_img | prepend: site.baseurl | prepend: site.url }}"></a>
+    {% endif %}
+    <div class="inner">
+        <div class="row">
+            {% if include.class == 'first' %}
+                <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 icon-container">
+            {% else %}
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 icon-container">
+            {% endif %}
+                <span class="category-icon icon-{{ include.post.category }}"></span>
+            </div>
+            {% if include.class == 'first' %}
+                <div class="col-lg-11 col-md-11 col-sm-9 col-xs-9 icon-container">
+            {% else %}
+                <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9 icon-container">
+            {% endif %}
+                <h5><a href="{{ include.post.permalink }}">{{ include.post.title }}</a></h5>
+                <p class="small">{% include es_date.html date=include.post.date %}</p>
+                <h6>{{ include.post.category_title }}</h6>
+            </div>
+        </div>
+    </div>
+</div>

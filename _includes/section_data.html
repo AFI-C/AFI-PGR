@@ -1,0 +1,49 @@
+<section id="category-data" class="container-fluid hidden">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h3>Datos</h3>
+            <div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#data-tab-recents" aria-controls="data-tab-recents" role="tab" data-toggle="tab">Recientes</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#data-tab-downloads" aria-controls="data-tab-downloads" role="tab" data-toggle="tab">Más Descargados</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="data-tab-recents" data-tag="{{ include.category }}">
+                        <table class="data">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th width="20%">Dependencia</th>
+                                    <th width="15%">Fecha</th>
+                                    <th width="10%">Formato</th>
+                                    <th width="10%"></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <a class="load-more" href="http://busca.datos.gob.mx/#!/conjuntos?categoria={{ include.category }}">Ver más datos</a>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="data-tab-downloads" data-tag="{{ include.category }}">
+                        <table class="data">
+                            <thead>
+                                <tr>
+                                    <th><span class="glyphicon glyphicon-chevron-down"></span>Nombre</th>
+                                    <th width="20%"><span class="glyphicon glyphicon-chevron-down"></span>Dependencia</th>
+                                    <th width="15%"><span class="glyphicon glyphicon-chevron-down"></span>Fecha</th>
+                                    <th width="10%"><span class="glyphicon glyphicon-chevron-down"></span>Formato</th>
+                                    <th width="10%"></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <a class="load-more" href="http://busca.datos.gob.mx/#!/conjuntos?categoria={{ include.category }}">Ver más datos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

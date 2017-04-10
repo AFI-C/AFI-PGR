@@ -1,0 +1,43 @@
+{% if include.posts.size > 0 %}
+    <div class="row equal-height">
+        {% assign i = 0 %}
+        {% if include.featured.size > 0 %}
+            {% for post in include.featured %}
+                {% include tool_layout.html post=post class='first' section=include.section %}
+            </div>
+            <div class="row equal-height">
+            {% endfor %}
+            {% for post in include.posts reversed %}
+                {% assign i = i | plus: 1 %}
+                {% include tool_layout.html post=post class='' section=include.section %}
+                {% if i == 2 %}
+                    {% assign i = 0 %}
+                    </div>
+                    <div class="row equal-height">
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% for post in include.posts reversed %}
+                {% if forloop.first %}
+                    {% include tool_layout.html post=post class='first' section=include.section %}
+                </div>
+                <div class="row equal-height">
+                {% else %}
+                    {% assign i = i | plus: 1 %}
+                    {% include tool_layout.html post=post class='' section=include.section %}
+                    {% if i == 2 %}
+                        {% assign i = 0 %}
+                        </div>
+                        <div class="row equal-height">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+{% else %}
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p>No se encontraron resultados</p>
+        </div>
+    </div>
+{% endif; %}

@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+{% include impact_header.html highlight='all' %}
+<div class="bg-container">
+    <div class="bg hidden-sm hidden-xs"></div>
+    <div class="container-fluid fixed post">
+        <div id="dgm-sidebar" class="col-lg-2 col-md-2 hidden-sm hidden-xs">
+            {% include sidebar.html highlight='all' section=page.section %}
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p class="cover-image">
+                    <img src="{{ "/assets/img/" | append: page.section | append: '/' | append: page.featured_img | prepend: site.baseurl | prepend: site.url }}">
+                </p>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1>{{ page.title }}</h1>
+                <p class="small">{% include es_date.html date=page.date %}</p>
+                {% if page.author %}
+                    <p class="author"><i>{{ page.author }}</i></p>
+                {% else %}
+                    <p class="author"><i>Presidencia</i></p>
+                {% endif %}
+                {{ content }}
+                {% include share_buttons.html %}
+                {% if page.datasets %}
+                <h5 class="app-subtitle">Conjuntos de datos utilizados</h5>
+                <ul id="tool-datasets" class="datasets-list">
+                    {% for dataset in page.datasets %}
+                        <li>{{ dataset }}</li>
+                    {% endfor %}
+                </ul>
+                <table class="data">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th width="20%">Dependencia</th>
+                            <th width="15%">Fecha</th>
+                            <th width="10%">Formato</th>
+                            <th width="10%"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                {% endif %}
+                {% if page.external_datasets %}
+                <h5 class="app-subtitle">Conjuntos de datos externos utilizados</h5>
+                <ul class="datasets-list">
+                    {% for dataset in page.external_datasets %}
+                        <li><a href="{{ dataset.url }}">{{ dataset.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <div class="hidden-sm hidden-xs">
+                    {% include disqus_comments.html %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

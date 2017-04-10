@@ -1,0 +1,36 @@
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml : true,
+      version: 'v2.0'
+    });
+
+    FB.Event.subscribe('xfbml.render', function(response) {
+      addAriaHiddenAttrs( $('.social-buttons .fb iframe') );
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  window.twttr = (function (d,s,id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+    js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+  }(document, "script", "twitter-wjs"));
+
+  twttr.ready(function(twttr) {
+    twttr.events.bind('loaded', function(event) {
+      addAriaHiddenAttrs( $(event.widgets[0]) );
+    });
+  });
+</script>

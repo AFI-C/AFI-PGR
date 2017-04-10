@@ -1,0 +1,33 @@
+{% assign posts = site.posts | where: 'section', include.section | where: 'category', include.category | where: 'published', true | sort: 'date' %}
+{% if posts.size > 0 %}
+    <section id="category-tools" class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h3>{{ include.title }}</h3>
+            </div>
+        </div>
+        <div class="row equal-height">
+            {% for post in posts reversed limit:3 %}
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 tool-item">
+                    <div class="inner">
+                        <a href="{{ post.permalink }}" class="img-link"><img src="{{ "/assets/img/" | append: include.section | append: '/' | append: post.grid_img | prepend: site.baseurl | prepend: site.url }}"></a>
+                        <div class="item-info">
+                            <h4><a href="{{ post.permalink }}">{{ post.title }}</a></h4>
+                            <div class="links-container">
+                                {% if post.links.webLink %}
+                                    <a href="{{ post.links.webLink }}" class="app-links web" alt="Web">Web</a>
+                                {% endif %}
+                                {% if post.links.appleStore %}
+                                    <a href="{{ post.links.appleStore }}" class="app-links apple"></a>
+                                {% endif %}
+                                {% if post.links.appleStore %}
+                                    <a href="{{ post.links.playStore }}" class="app-links android"></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endif %}
