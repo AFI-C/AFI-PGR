@@ -15,5 +15,5 @@ In order to run the site install both the `jekyll` and `jekyll-redirect-from` ge
 ### Run
 
 ```
-% jekyll serve --watch --config _config-local.yml
+% jekyll serve --watch --config _config.local.yml
 ```
