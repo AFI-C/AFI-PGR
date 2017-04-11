@@ -1,0 +1,24 @@
+{
+  "name": "dgm-navbar",
+  "version": "0.0.8",
+  "license": "MIT",
+  "main": "dgm-navbar.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1"
+  },
+  "keywords": [
+    "datos.gob.mx",
+    "dgm",
+    "dgm-navbar"
+  ],
+  "homepage": "https://github.com/mxabierto/dgm-navbar",
+  "_release": "0.0.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.8",
+    "commit": "dcb660ea439182c5a42f78213e83fc2cfb355759"
+  },
+  "_source": "https://github.com/mxabierto/dgm-navbar.git",
+  "_target": "^0.0.8",
+  "_originalSource": "mxabierto/dgm-navbar"
+}
