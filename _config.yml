@@ -13,3 +13,4 @@ github_username:  mendozagioo
 # Build settings
 markdown: kramdown
 gems: ['jekyll-redirect-from']
+theme: jekyll-theme-slate
